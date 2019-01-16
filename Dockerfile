@@ -1,6 +1,6 @@
 FROM node:10-slim
 
-RUN npm i -g serverless
+RUN yarn global add serverless
 
 ADD entrypoint.sh /entrypoint.sh
 
