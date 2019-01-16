@@ -6,4 +6,8 @@ ls
 
 echo 'i made it ma'
 
-serverless deploy
+cd /github/workspace
+
+echo 'in workspace'
+
+ls
