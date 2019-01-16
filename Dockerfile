@@ -10,8 +10,7 @@ LABEL "com.github.actions.description"="Deploy a Worker with Serverless"
 LABEL "com.github.actions.icon"="cloud"
 LABEL "com.github.actions.color"="orange"
 
-RUN npm i -g serverless
-
-RUN serverless plugin install -n serverless-cloudflare-workers
+RUN npm i -g serverless \
+    && serverless plugin install -n serverless-cloudflare-workers
 
 ENTRYPOINT ["/entrypoint.sh"]
