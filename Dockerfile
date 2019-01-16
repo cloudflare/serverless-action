@@ -14,4 +14,4 @@ RUN npm i -g serverless
 
 RUN serverless plugin install -n serverless-cloudflare-workers
 
-ENTRYPOINT ["serverless deploy"]
+ENTRYPOINT ["/entrypoint.sh"]
