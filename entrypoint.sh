@@ -1,6 +1,6 @@
 #!/bin/sh
 
-set -e
+pwd
 
 echo 'i made it ma'
 
