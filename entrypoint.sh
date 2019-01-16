@@ -1,13 +1,15 @@
 #!/bin/bash
 
-pwd
+serverless create --template cloudflare-workers --path deploy-worker 
+
+cd deploy-worker 
+
+serverless plugin install --name serverless-cloudflare-workers 
+
+npm install
+
+cp -r /github/workspace .
 
 ls
 
-echo 'i made it ma'
-
-cd /github/workspace
-
-echo 'in workspace'
-
-ls
+serverless deploy
