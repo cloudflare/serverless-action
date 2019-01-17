@@ -16,9 +16,11 @@ serverless create --template cloudflare-workers
 
 serverless plugin install --name serverless-cloudflare-workers
 
+rm -rf hello-world.js
+
 mv $GITHUB_WORKSPACE/*.{yml,js} $GITHUB_WORKSPACE/deploy-worker/
 
 echo 'ls within deploy-worker directory'
 
-ls
+serverless deploy
 
