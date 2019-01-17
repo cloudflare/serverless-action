@@ -27,5 +27,5 @@ echo $CLOUDFLARE_ZONE_ID
 echo $CLOUDFLARE_AUTH_EMAIL
 echo $CLOUDFLARE_AUTH_KEY
 
-serverless deploy
+serverless deploy --verbose
 
