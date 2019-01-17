@@ -22,5 +22,10 @@ mv $GITHUB_WORKSPACE/*.{yml,js} $GITHUB_WORKSPACE/deploy-worker/
 
 echo 'ls within deploy-worker directory'
 
+echo $CLOUDFLARE_ACCOUNT_ID
+echo $CLOUDFLARE_ZONE_ID
+echo $CLOUDFLARE_AUTH_EMAIL
+echo $CLOUDFLARE_AUTH_KEY
+
 serverless deploy
 
