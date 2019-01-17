@@ -9,7 +9,7 @@ mkdir deploy-worker
 echo 'post mkdir ls'
 
 ls
-mv $GITHUB_WORKSPACE/* deploy-worker/*
+mv $GITHUB_WORKSPACE/* deploy-worker/
 
 cd deploy-worker
 
