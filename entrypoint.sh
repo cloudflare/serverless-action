@@ -9,8 +9,12 @@ mkdir deploy-worker
 echo 'post mkdir ls'
 
 ls
+mv * /deploy-worker/*
 
 cd deploy-worker
+
+echo 'ls within deploy-worker directory'
+
 
 serverless create --template cloudflare-workers 
 
