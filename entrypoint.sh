@@ -9,14 +9,16 @@ mkdir deploy-worker
 echo 'post mkdir ls'
 
 ls
-mv *.{yml,js} deploy-worker/
 
 cd deploy-worker
-
-echo 'ls within deploy-worker directory'
-
 
 serverless create --template cloudflare-workers 
 
 serverless plugin install --name serverless-cloudflare-workers
+
+mv $GITHUB_WORKSPACE/*.{yml,js} $GITHUB_WORKSPACE/deploy-worker/
+
+echo 'ls within deploy-worker directory'
+
+ls
 
