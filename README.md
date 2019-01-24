@@ -4,10 +4,10 @@ To use this action you must provide the appropriate file structure in your CF Wo
 
 <b>File Structure</b>
 
-To utilize this action, you must include the CF Worker script to be deployed and a serverless.yml file. Your file structure should look like:
+To utilize this action, your repo must include the CF Worker script to be deployed and a serverless.yml file. Your file structure should look like:
 
     .
-    |- worker-script.js
+    |- workerScript.js
     |- serverless.yml
     
 An example serverless.yml file could look like:
@@ -25,11 +25,15 @@ plugins:
   - serverless-cloudflare-workers
 functions:
   worker-action: # can be arbitrary
-    name: hello  # the name of your script within the Cloudflare UI
+    name: worker-action  # the name of your script within the Cloudflare UI, <b>MUST</b> match the function name one line above
     script: workerScript  # there must be a file called workerScript.js in your repository containing serverless.yml
     
  ```
 The Serverless framework expects this ```.yml``` file which allows us to use our existing Serverless integration to deploy Workers for this GitHub action.
+
+NOTE: advanced users may specify an ``events`` block in ```serverless.yml```. Read [here]( https://developers.cloudflare.com/workers/deploying-workers/serverless/) for more information.
+
+
 
 <b>Environmental Variables </b>
 
