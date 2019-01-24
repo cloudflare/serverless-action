@@ -2,7 +2,7 @@ Github Action to Deploy a Cloudflare Worker with the Serverless Framework.
 
 If you are new to GitHub actions please see the official guide [here](https://help.github.com/articles/creating-a-workflow-with-github-actions/).
 
-To use this action you must provide the appropriate file structure in your CF Worker repo as well as the appropriate environmental variables.
+To use this action you must provide the appropriate file structure in your repo containing a Worker as well as the appropriate environmental variables.
 
 <b>File Structure</b>
 
