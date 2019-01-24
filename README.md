@@ -9,6 +9,10 @@ To utilize this action, your repo must include the CF Worker script to be deploy
     .
     |- workerScript.js
     |- serverless.yml
+
+<b> Serverless.yml </b>
+
+The Serverless framework expects a ```serverless.yml``` file which allows us to use our existing Serverless integration to deploy Workers for this GitHub action.
     
 An example serverless.yml file could look like:
 ```
@@ -29,11 +33,8 @@ functions:
     script: workerScript  # there must be a file called workerScript.js in your repository containing serverless.yml
     
  ```
-The Serverless framework expects this ```.yml``` file which allows us to use our existing Serverless integration to deploy Workers for this GitHub action.
 
 NOTE: advanced users may specify an ``events`` block in ```serverless.yml```. Read [here]( https://developers.cloudflare.com/workers/deploying-workers/serverless/) for more information.
-
-
 
 <b>Environmental Variables </b>
 
