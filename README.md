@@ -28,13 +28,15 @@ provider:
 plugins:
   - serverless-cloudflare-workers
 functions:
-  worker-action: # can be arbitrary
-    name: worker-action  # the name of your script within the Cloudflare UI, <b>MUST</b> match the function name one line above
+  worker-action: # this descriptor can be an arbitrary name
+    name: worker-action  # the name of your script within the Cloudflare UI, MUST match the function name one line above
     script: workerScript  # there must be a file called workerScript.js in your repository containing serverless.yml
     
  ```
 
 NOTE: advanced users may specify an ``events`` block in ```serverless.yml```. Read [here]( https://developers.cloudflare.com/workers/deploying-workers/serverless/) for more information.
+
+In a multiscript (Enterprise) environment the ```name``` will be seen in the UI where all your scripts are listed. In a single script environment the ```name``` will not be shown in the UI (as there is only one script).
 
 <b>Environmental Variables </b>
 
