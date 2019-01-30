@@ -6,7 +6,7 @@ To use this action you must provide the appropriate file structure in your repo 
 
 <b>File Structure</b>
 
-To utilize this action, your repo must include the CF Worker script to be deployed and a serverless.yml file. Your file structure should look like:
+Your repo must include the CF Worker script to be deployed and a serverless.yml file. Your file structure should look like:
 
     .
     |- workerScript.js
