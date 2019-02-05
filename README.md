@@ -70,5 +70,3 @@ action "Deploy CF Worker" {
 }
 ```
 
-You can also reference this blog post for more details.
-
