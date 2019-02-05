@@ -70,3 +70,7 @@ action "Deploy CF Worker" {
 }
 ```
 
+<b>License</b>
+
+The Dockerfile and associated scripts and documentation in this project are released under the [MIT](https://github.com/tombrightbill/serverless-action/blob/master/LICENSE) License.
+
