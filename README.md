@@ -1,14 +1,20 @@
-Github Action to Deploy a Cloudflare Worker with the Serverless Framework
+Github Action to Deploy a Cloudflare Worker with the Serverless Framework.
 
-To use this action you must provide the appropriate file structure in your CF Worker repo as well as the appropriate environmental variables.
+If you are new to GitHub actions please see the official guide [here](https://help.github.com/articles/creating-a-workflow-with-github-actions/).
+
+To use this action you must provide the appropriate file structure in your repo containing a Worker as well as the appropriate environmental variables.
 
 <b>File Structure</b>
 
-To utilize this action, you must include the CF Worker script to be deployed and a serverless.yml file. Your file structure should look like:
+Your repo must include the CF Worker script to be deployed and a serverless.yml file. Your file structure should look like:
 
     .
-    |- worker-script.js
+    |- workerScript.js
     |- serverless.yml
+
+<b> Serverless.yml </b>
+
+The Serverless framework expects a ```serverless.yml``` file which allows us to use our existing Serverless integration to deploy Workers for this GitHub action.
     
 An example serverless.yml file could look like:
 ```
@@ -24,12 +30,15 @@ provider:
 plugins:
   - serverless-cloudflare-workers
 functions:
-  worker-action: # can be arbitrary
-    name: hello  # the name of your script within the Cloudflare UI
+  worker-action: # this descriptor can be an arbitrary name
+    name: worker-action  # the name of your script within the Cloudflare UI, MUST match the function name one line above
     script: workerScript  # there must be a file called workerScript.js in your repository containing serverless.yml
     
  ```
-The Serverless framework expects this ```.yml``` file which allows us to use our existing Serverless integration to deploy Workers for this GitHub action.
+
+NOTE: advanced users may specify an ``events`` block in ```serverless.yml```. Read [here]( https://developers.cloudflare.com/workers/deploying-workers/serverless/) for more information.
+
+In a multiscript (Enterprise) environment the ```name``` will be seen in the UI where all your scripts are listed. In a single script environment the ```name``` will not be shown in the UI (as there is only one script).
 
 <b>Environmental Variables </b>
 
