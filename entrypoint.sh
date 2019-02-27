@@ -1,16 +1,13 @@
 #!/bin/bash
 
-mkdir deploy-worker
+ACTION_WORKSPACE=/root/worker-deploy
 
-cd deploy-worker
+if [ -e $GITHUB_WORKSPACE/serverless.yml ]
+then
+	echo 'Custom serverless.yml found.'
+    mv $GITHUB_WORKSPACE/serverless.yml $ACTION_WORKSPACE
+fi
 
-serverless create --template cloudflare-workers 
+mv $GITHUB_WORKSPACE/*.js $ACTION_WORKSPACE
 
-serverless plugin install --name serverless-cloudflare-workers
-
-rm -rf helloWorld.js
-
-mv $GITHUB_WORKSPACE/*.{yml,js} $GITHUB_WORKSPACE/deploy-worker/
-
-sls deploy
-
+cd $ACTION_WORKSPACE && sls deploy

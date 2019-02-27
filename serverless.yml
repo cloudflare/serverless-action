@@ -1,0 +1,16 @@
+service:
+    name: deploy-worker-github-action
+    config:
+      accountId: ${env:CLOUDFLARE_ACCOUNT_ID}
+      zoneId: ${env:CLOUDFLARE_ZONE_ID}
+
+provider:
+  name: cloudflare
+
+plugins:
+  - serverless-cloudflare-workers
+  
+functions:
+  worker-deploy:
+    name: ${env:CLOUDFLARE_SCRIPT_NAME}
+    script: ${env:CLOUDFLARE_SCRIPT_NAME} 
