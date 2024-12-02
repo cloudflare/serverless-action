@@ -13,7 +13,7 @@ Your repo must include the CF Worker script to be deployed and an optional `serv
 This action will expect the following environmental variables to be passed:
 
 ```
-CLOUDFLARE_AUTH_EMAIL #the email associated with the accout
+CLOUDFLARE_AUTH_EMAIL #the email associated with the account
 CLOUDFLARE_ACCOUNT_ID #your account ID
 CLOUDFLARE_ZONE_ID #your Cloudflare zone ID
 CLOUDFLARE_AUTH_KEY #your global API key; use the secret variable type available within GitHub Actions for this variable
