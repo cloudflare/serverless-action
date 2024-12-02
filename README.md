@@ -32,7 +32,7 @@ In a multiscript (Enterprise) environment the ```name``` will be seen in the UI 
 The ```main.workflow``` output could look something like:
 
 ```
-workflow "Depkoy Worker {
+workflow "Deploy Worker {
   on = "push"
   resolves = ["cloudflare/serverless-action@master"]
 }
